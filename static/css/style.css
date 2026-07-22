@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+.divider {
+    width: 1px; /* Çizginin genişliği */
+    background-color: #000; /* Çizginin rengi */
+    height: 80%; /* Çizginin yüksekliği */
+    margin: 0 20px;
+}
+
+.şirket-container,
+.personel-container {
+    min-height: 80vh;
+    width: 45%; /* Her bir kutu %45 genişliğinde */
+    padding: 30px;
+    font-size: 1.2rem;
+    font-family: 'Caveat', cursive;
+    background-color: #eaeded;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px; /* Köşe yuvarlama */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    transition: all 0.3s ease;
+}
+
+.şirket-container:hover,
+.personel-container:hover {
+    transform: translateY(-5px); /* Hover efekti */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+input {
+    height: 40px;
+    width: 80%;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 1rem;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    font-size: 1rem;
+    color: #888;
+}
+
+button {
+    width: 80%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.uye-ol {
+    position: absolute;
+    bottom: 20px; /* Alt kenardan 20px içeriye al */
+    left: 50%;
+    transform: translateX(-50%); /* Orta hizalama */
+    width: 100px; /* Genişliği otomatik ayarla */
+    height: 40px;
+    background-color: #008CBA;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.uye-ol:hover {
+    background-color: #007bb5;
+}
+
+/* Form elemanlarına odaklanma efekti */
+input:focus,
+button:focus {
+    outline: none;
+    border: 2px solid #4CAF50;
+}
+
+/* Mobile cihazlar için responsive düzen */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .şirket-container,
+    .personel-container {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .divider {
+        display: none; /* Çizgiyi mobilde gizle */
+    }
+}

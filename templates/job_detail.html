@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ilan_detay.company_name }} - İlan Detayı</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/job-detail.css' %}">
+</head>
+<body>
+    <div class="job-detail-container">
+        <h1>İlan Detayı</h1>
+        <div class="job-detail">
+            <p><strong>İlan ID:</strong> {{ ilan_detay.ilan_id }}</p>
+            <p><strong>Şirket Adı:</strong> {{ ilan_detay.company_name }}</p>
+            <p><strong>Sektör:</strong> {{ ilan_detay.sector }}</p>
+            <p><strong>Konum:</strong> {{ ilan_detay.location }}</p>
+            <p><strong>Açıklama:</strong> {{ ilan_detay.description }}</p>
+            <p><strong>Pozisyon:</strong> {{ ilan_detay.position }}</p>
+            <p><strong>Deneyim:</strong> {{ ilan_detay.experience }}</p>
+            <p><strong>Eğitim:</strong> {{ ilan_detay.education }}</p>
+            <p><strong>Çalışma Şekli:</strong> {{ ilan_detay.work_type }}</p>
+        </div>
+
+        <!-- Başvuru Butonu -->
+        <form method="POST" action="{% url 'job_apply' ilan_detay.ilan_id %}">
+            {% csrf_token %}
+            <button type="submit" class="apply-btn">Başvur</button>
+        </form>
+    </div>
+</body>
+</html>

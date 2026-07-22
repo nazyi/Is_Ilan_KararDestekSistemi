@@ -1,0 +1,125 @@
+/* Genel stil */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sayfa başlık ve butonlar */
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+/* Filtreleme formu */
+.filter-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.filter-form input {
+    padding: 10px;
+    width: 200px;
+}
+
+.filter-form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tablolar */
+.table-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+table.job-table, table.recommended-jobs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabloların Genel Stili */
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Önerilen İş İlanları Tablosu (Recommended Jobs Table) */
+table.recommended-jobs-table th, table.recommended-jobs-table td {
+    text-align: left;
+}
+
+/* Sayfalama */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination .step-links a {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.pagination .step-links a:hover {
+    background-color: #45a049;
+}
+
+.pagination .current {
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: black;
+    border-radius: 5px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background-color: #45a049;
+}
+
+.recommended-job-table{
+    margin-top: 40px;
+}
+

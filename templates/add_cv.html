@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/add-cv.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <title>CV Ekle</title>
+</head>
+<body>
+    <div class="cv-ekle-container">
+        <h2>CV Bilgileri</h2>
+        <form method="POST" action="{% url 'add_cv' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="konum" placeholder="Konum" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="diller" placeholder="Diller" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="egitim_seviyesi" placeholder="Eğitim Seviyesi" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="okul" placeholder="Okul" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="bolum" placeholder="Bölüm" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="yetenekler" placeholder="Yetenekler" required>
+            </div>
+            <div class="form-group">
+                <input type="number" name="tecrube_senesi" placeholder="Tecrübe Senesi" required>
+            </div>
+            <div class="form-group">
+                <textarea name="tanitma_metni" placeholder="Tanıtma Metni" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Kaydet</button>
+        </form>
+
+        <form method="POST" action="{% url 'ozgecmis' %}">
+            {% csrf_token %}
+            <button type="submit">Nlp Uygula</button>
+        </form>
+        <form method="POST" action="{% url 'eslestirme' %}">
+            {% csrf_token %}
+            <button type="submit">Eşleştirme Uygula</button>
+        </form>
+        <form method="POST" action="{% url 'SkorHesaplama' %}">
+            {% csrf_token %}
+            <button type="submit">Skor Hesapla</button>
+        </form>
+    </div>
+
+    {% if cv_kaydedildi %}
+            <script type="text/javascript">
+                alert("CV başarıyla kaydedildi!");
+            </script>
+    {% endif %}
+</body>
+</html>
+

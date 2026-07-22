@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şirket Üye Ol</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/şirket-üye.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="şirket-bilgi-container">
+        <h2>Üye Ol</h2>
+        <form method="POST" action="{% url 'about' %}">
+            {% csrf_token %}
+            <input type="text" name="company_name" placeholder="Şirket Adı"><br>
+            <input type="text" name="location" placeholder="Konum"><br>
+            <input type="text" name="phone" placeholder="Telefon Numarası"><br>
+            <input type="text" name="address" placeholder="Açık Adres"><br>
+            <input type="text" name="sector" placeholder="Sektör"><br>
+            <input type="text" name="company_type" placeholder="Şirket Türü"><br>
+            <input type="text" name="employee_count" placeholder="Çalışan Sayısı"><br>
+            <input type="password" name="password" placeholder="Şifre"><br>
+            <button type="submit">Kayıt Ol</button>
+        </form>        
+    </div>
+    <div class="foto-container">
+        <img src="{% static 's_uye-ol.jpg' %}">
+    </div>
+</body>
+</html>

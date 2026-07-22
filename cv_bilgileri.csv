@@ -1,0 +1,16 @@
+id,AdSoyad,Telefon,Cinsiyet,Yas,eMail,Sifre,Konum,Dil,EgitimSeviyesi,Okul,Bolum,Yetenekler,Tecrube,TanıtmaMetni
+1,Aysun Kara,5361233652,Kız,25,aysun@gmail.com,1234,İstanbul,İngilizce,Lisans,İstanbul Teknik Üniversitesi,Yazılım Mühendisi,"python, sql, java, react, veri, analizi",3,Merhaba ben şu bölümü mezunuyum bu işlere ilgim var
+2,Erim Özcan,5361233652,Erkek,27,erim@gmail.com,1234,İstanbul,İngilizce,Lisans,Ankara Üniversitesi,Mekanik Mühendisliği,"kalite, iş, güvenliği, ",2,Merhaba ben şu bölümü mezunuyum bu işlere ilgim var
+3,Efsun Sarı,5361233652,Kız,20,efsun@gmail.com,1234,İstanbul,İngilizce,Lise,İstanbul Lisesi,Yok,"ms, office, iletişim, ",1,Merhaba ben şu bölümü mezunuyum bu işlere ilgim var
+4,Hakan Yıldırım,5361233652,Erkek,30,hakan@gmail.com,1234,İstanbul,İngilizce,Lisans,Muğla Sıtkı Koçman Üniversitesi,Bilgisayar Mühendisliği,"bilgisayar, yazılım ,geliştirme, oracle,cyberark, veritabanları, java, problem, çözme",5,Merhaba ben şu bölümü mezunuyum bu işlere ilgim var
+5,Aşye Kazık,5361233652,Kız,22,ayşe@gmail.com,1234,Aydın,Almanca İngilizce,Lisansüstü,Muğla Sıtkı Koçman Üniversitesi,Bilgisayar Mühendisliği,"Java,C,PL/SQL,SQL,DB2IT,Oracle",0,Merhaba ben şu bölümü mezunuyum bu işlere ilgim var
+6,Volkan,5361233652,Erkek,25,volkan@gmail.com,1234,Antalya,Almanca,Ön lisans,Muğla Sıtkı Koçman Üniversitesi,Turizm Meslek ,"İnsan ilişkileri, iletişim, Micros",2,Merhaba ben şu bölümü mezunuyum bu işlere ilgim var
+7,Aliye,5498521625,Kız,30,aliye@gmail.com,1234,Denizli,ingilizce almanca,lisans,Muğla Sıtkı Koçman,İnşaat Mühendisi,Hidrolik CAD Yapısal Analiz Statik ve Mukavemet Bilgisi ,2,ben aliye
+12,berfin kuzu,5498521625,Kız,26,berfin@gmail.com,1234,Denizli,ingilizce almanca,lisans,Muğla Sıtkı Koçman,Bilgisayar Mühendisi,Python java sql oracle,4,ben berfin
+13,Kazım Türk,5498521625,Erkek,21,kazım@gmail.com,1234,İstanbul,ingilizce almanca,lisansüstü,Muğla Sıtkı Koçman,Bilgisayar Mühendisi,Python java sql oracle,2,ben kazım
+14,Tülay Tun,5498521625,Kız,21,tulay@gmail.com,1234,İstanbul,ingilizce almanca,lisans,Muğla Sıtkı Koçman,Bilgisayar Mühendisi,SQL Oracle Veritabanına ERP,3,ben tülay
+15,Burak Kut,5498521625,Erkek,25,burak@gmail.com,1234,İstanbul,ingilizce almanca,lisans,Muğla Sıtkı Koçman,Bilgisayar Mühendisi,Python java sql oracle,10,ben burak
+16,Hülya ,5498521625,Kız,26,hulya@gmail.com,1234,İstanbul,ingilizce almanca,önlisans,Muğla Sıtkı Koçman,Bilgisayar Mühendisi,SQL Oracle Veritabanına ERP,7,ben hülya
+8,can,5498521625,Erkek,21,can@gmail.com,1234,istanbul,ingilizce,lisans,muğla sıtkı koçman,bilgisayar mühendisliği,python,2,selam ben can
+11,Ömer Halis,5498521625,Erkek,30,omer@gmail.com,1234,Van,"Fransızca, İngilizce, Rusça",Lisans,Orta Doğu Teknik ,Bilgisayar Mühendisi,"Weka, Sql, ThinkCad ",5,"Bilgisayar mühendisliği alanında yenilikçi ve çözüm odaklı bir mühendis olarak, Weka, SQL ve ThinkCad gibi araçlarla veri analizi, veritabanı yönetimi ve tasarım konularında uzmanlaştım. Hem teknik becerilerim hem de problem çözme yeteneğimle projelere değer katmayı hedefliyorum. Öğrenmeye açık ve takım çalışmasına yatkın bir profesyonel olarak, teknoloji dünyasında etkin çözümler üretmeyi amaçlıyorum."
+12,Elif Tam,5346784523,Kadın,45,elif@gmail.com,1234,İstanbul,"İngilizce, Almanca",Lisans,Muğla Sıtkı Koçma Üniversitesi,Bilişim Sistemleri Mühendisliği,"Python, Sql, Java, Oracle, Linux",15,Ben Elif

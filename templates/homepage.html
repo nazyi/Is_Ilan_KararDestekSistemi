@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <title>Homepage</title>
+</head>
+<body>
+    <!-- Şirket Girişi -->
+    <div class="şirket-container">
+        
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Şirket Girişi</h1>
+            <input type="text" name="company_name" placeholder="Şirket Adı"><br>
+            <input type="password" name="password" placeholder="Şifre"><br>
+            <button class="giris" type="submit" name="company_login">Giriş Yap</button>
+        </form>
+        <button class="uye-ol" type="button" onclick='window.location.href="{% url 'about' %}";'>Üye Ol</button>
+    </div>
+    <div class="divider"></div> <!-- Çizgi için div -->
+    <!-- Personel Girişi -->
+    <div class="personel-container">
+        
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Personel Girişi</h1>
+            <input type="text" name="personel_email" placeholder="Mailiniz"><br>
+            <input type="password" name="personel_password" placeholder="Şifreniz"><br>
+            <button class="giris" type="submit" name="personnel_login">Giriş Yap</button>
+        </form>
+        <button class="uye-ol" type="button" onclick="window.location.href='{% url 'personel_uye_ol' %}'">Üye Ol</button>
+    </div>
+
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.company_name }} - İş İlanı Detayları</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Başlık stili */
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* Tablo stili */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+/* Link butonu stili */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:hover {
+    background-color: #007bff;
+}
+
+/* İlan başlıkları ve detayları stili */
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Table içerikleri düzeni */
+td, th {
+    font-size: 1rem;
+    color: #333;
+}
+
+td {
+    text-align: center;
+}
+
+/* Alternatif satır renkleri */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+    </style>
+</head>
+<body>
+    <h1>{{ job.company_name }} - İş İlanı Detayları</h1>
+
+    <p><strong>Sektör:</strong> {{ job.sektor }}</p>
+    <p><strong>Konum:</strong> {{ job.konum }}</p>
+    <p><strong>Pozisyon:</strong> {{ job.pozisyon }}</p>
+    <p><strong>Deneyim:</strong> {{ job.deneyim }}</p>
+    <p><strong>Eğitim:</strong> {{ job.egitim }}</p>
+    <p><strong>Çalışma Şekli:</strong> {{ job.calisma_sekli }}</p>
+    <p><strong>Açıklama:</strong> {{ job.aciklama|safe }}</p>
+
+    <h2>Başvuranlar</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>E-mail</th>
+                <th>Telefon</th>
+                <th>Cinsiyet</th>
+                <th>Yaş</th>
+                <th>Konum</th>
+                <th>Dil</th>
+                <th>Eğitim Seviyesi</th>
+                <th>Okul</th>
+                <th>Bolum</th>
+                <th>Yetenekler</th>
+                <th>Tecrübe</th>
+                <th>Tanıtım Metni</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for applicant in applicant_details %}
+                <tr>
+                    <td>{{ applicant.isim }}</td>
+                    <td>{{ applicant.email }}</td>
+                    <td>{{ applicant.telefon }}</td>
+                    <td>{{ applicant.cinsiyet }}</td>
+                    <td>{{ applicant.yas }}</td>
+                    <td>{{ applicant.konum }}</td>
+                    <td>{{ applicant.dil }}</td>
+                    <td>{{ applicant.egitim_seviyesi }}</td>
+                    <td>{{ applicant.okul }}</td>
+                    <td>{{ applicant.bolum }}</td>
+                    <td>{{ applicant.yetenek }}</td>
+                    <td>{{ applicant.tecrube }}</td>
+                    <td>{{ applicant.tanitmaMetni }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">Bu ilana henüz başvuran yok.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Önerilen Çalışanlar</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>E-mail</th>
+                <th>Telefon</th>
+                <th>Cinsiyet</th>
+                <th>Yaş</th>
+                <th>Konum</th>
+                <th>Dil</th>
+                <th>Eğitim Seviyesi</th>
+                <th>Okul</th>
+                <th>Bolum</th>
+                <th>Yetenekler</th>
+                <th>Tecrübe</th>
+                <th>Tanıtım Metni</th>
+                <th>Skor</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for candidate in recommended_candidates %}
+                <tr>
+                    <td>{{ candidate.AdSoyad }}</td>
+                    <td>{{ candidate.eMail }}</td>
+                    <td>{{ candidate.Telefon }}</td>
+                    <td>{{ candidate.Cinsiyet }}</td>
+                    <td>{{ candidate.Yas }}</td>
+                    <td>{{ candidate.Konum }}</td>
+                    <td>{{ candidate.Dil }}</td>
+                    <td>{{ candidate.EgitimSeviyesi }}</td>
+                    <td>{{ candidate.Okul }}</td>
+                    <td>{{ candidate.Bolum }}</td>
+                    <td>{{ candidate.Yetenekler }}</td>
+                    <td>{{ candidate.Tecrube }}</td>
+                    <td>{{ candidate.TanıtmaMetni }}</td>
+                    <td>{{ candidate.Benzerlik_Skoru }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">Önerilen çalışan bulunamadı.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'company_homepage' company_name=job.company_name %}">Geri</a>
+</body>
+</html>

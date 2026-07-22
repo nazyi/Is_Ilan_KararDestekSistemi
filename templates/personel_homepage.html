@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/personel-homepage.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <title>{{ personel_name }}</title>
+</head>
+<body>
+    <div class="personel-homepage-container">
+        <div class="header">
+            <h1>Hoş geldiniz, {{ personel_name }}!</h1>
+            
+        </div>
+        <div class="job-applications">
+            <h2>Başvurularınız:</h2>
+            {% if basvuru_listesi %}
+            <table class="job-table">
+                <thead>
+                    <tr>
+                        <th>İlan Başlığı</th>
+                        <th>Şirket Adı</th>
+                        <th>Sektör</th>
+                        <th>Pozisyon</th>
+                        <th>Deneyim</th>
+                        <th>Eğitim</th>
+                        <th>Başvuru Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for basvuru in basvuru_listesi %}
+                        <tr>
+                            <td>{{ basvuru.1 }}</td>
+                            <td>{{ basvuru.2 }}</td>
+                            <td>{{ basvuru.3 }}</td>
+                            <td>{{ basvuru.4 }}</td>
+                            <td>{{ basvuru.5 }}</td>
+                            <td>{{ basvuru.6 }}</td>
+                            <td>{{ basvuru.7 }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Henüz herhangi bir iş başvurusu yapmadınız.</p>
+        {% endif %}
+        </div>
+        <div> 
+            <button class="job-apply-btn" onclick="window.location.href='{% url 'job_application' %}'">İşe Başvur</button>
+            <!-- CV Ekle Butonu -->
+            <button class="cv-add-btn" onclick="window.location.href='{% url 'add_cv' %}'">CV Ekle</button></div>
+        
+</body>
+</html>

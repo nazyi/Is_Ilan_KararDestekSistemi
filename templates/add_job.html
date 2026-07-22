@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/add_job.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <title>İlan Ekle</title>
+</head>
+<body>
+    <div class="container">
+        <div class="şirket-üye-container">
+            <h2>Yeni İlan Ekle</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label for="sektor">Sektör:</label>
+                <input type="text" id="sektor" name="sektor" required><br><br>
+
+                <label for="konum">Konum:</label>
+                <input type="text" id="konum" name="konum" required><br><br>
+
+                <label for="aciklama">Açıklama:</label><br>
+                <textarea id="aciklama" name="aciklama" rows="4" cols="50" required></textarea><br><br>
+
+                <label for="pozisyon">Pozisyon:</label>
+                <input type="text" id="pozisyon" name="pozisyon" required><br><br>
+
+                <label for="deneyim">Deneyim:</label>
+                <input type="text" id="deneyim" name="deneyim" required><br><br>
+
+                <label for="egitim">Eğitim:</label>
+                <input type="text" id="egitim" name="egitim" required><br><br>
+
+                <label for="calisma_sekli">Çalışma Şekli:</label>
+                <input type="text" id="calisma_sekli" name="calisma_sekli" required><br><br>
+
+                <button type="submit">Kaydet</button>
+            </form>
+
+            <form method="POST" action="{% url 'yeni_ilan_ekle_anlamli' %}">
+                {% csrf_token %}
+                <button type="submit">Nlp Uygula</button>
+            </form>
+            <form method="POST" action="{% url 'eslestirme' %}">
+                {% csrf_token %}
+                <button type="submit">Eşleştirme Uygula</button>
+            </form>
+            <form method="POST" action="{% url 'SkorHesaplama' %}">
+                {% csrf_token %}
+                <button type="submit">Skor Hesapla</button>
+            </form>
+    </div>
+    <div class="foto-container">
+        <img src="{% static 'ilan-ekle.jpg' %}">
+    </div>
+</body>
+</html>

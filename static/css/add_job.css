@@ -1,0 +1,84 @@
+/* Sayfa düzeni */
+body {
+    font-family: 'Caveat', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: x-large;
+
+}
+
+/* Container: Fotoğraf ve formun yan yana olmasını sağlar */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Form container */
+.şirket-üye-container {
+    width: 50%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+    text-align: center;
+}
+
+/* Form elemanları */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button */
+button {
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Fotoğraf container */
+.foto-container {
+    width: 50%;
+}
+
+.foto-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

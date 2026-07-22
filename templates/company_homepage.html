@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <title>{{ company_name }}!</title>
+    <style>
+          /* Genel Sayfa Stili */
+        body {
+            font-family: 'Caveat', cursive;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        /* Tablo Stili */
+        table {
+            width: 100%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #d9eaf7;
+            cursor: pointer;
+        }
+
+        /* Buton Stilleri */
+        .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #add-job-btn {
+            margin-top: 20px;
+            background-color: #28a745;
+        }
+
+        #add-job-btn:hover {
+            background-color: #218838;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: left !important">Selam, {{ company_name }}!</h1>
+
+<!-- "İlanların" başlığı -->
+    <p style="text-align: left; font-weight: bold;">İlanların</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Sektör</th>
+                <th>Konum</th>
+                <th>Pozisyon</th>
+                <th>Deneyim</th>
+                <th>Eğitim</th>
+                <th>Çalışma Şekli</th>
+                <th>İncele</th> <!-- İncele butonunu ekledik -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+                <tr class="job-row">
+                    <td>{{ job.sektor }}</td>
+                    <td>{{ job.konum }}</td>
+                    <td>{{ job.pozisyon }}</td>
+                    <td>{{ job.deneyim }}</td>
+                    <td>{{ job.egitim }}</td>
+                    <td>{{ job.calisma_sekli }}</td>
+                    <td>
+                        <a href="{% url 'sirket_job_detail' company_name=company_name job_id=job.Ilan_id %}" class="btn btn-primary">İncele</a> <!-- İncele butonu -->
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div id="action-buttons" style="display: none;">
+        <button>İlanı Düzenle</button>
+    </div>
+
+    <a href="{% url 'add_job' %}" class="btn btn-primary">İlan Ekle</a>
+</body>
+</html>
+
+

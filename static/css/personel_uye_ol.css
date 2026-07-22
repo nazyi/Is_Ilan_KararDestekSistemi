@@ -1,0 +1,83 @@
+/* Genel Stil Ayarları */
+body {
+    font-family: 'Caveat', sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* İçerik Konteyneri */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Form ve fotoğraf arasında boşluk bırakır */
+}
+
+/* Üye Ol Formu Konteyneri */
+.personel-bilgi-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1); /* Sadece sol ve alt-üst gölge */
+    width: 100%;
+    max-width: 400px;
+   
+}
+
+/* Başlık */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Grup */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Input Alanları */
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Buton */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Buton Hover */
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Fotoğraf Konteyneri */
+.foto-container {
+    max-width: 600px; /* Fotoğrafın genişliği */
+    width: 100%;
+    margin-left: 20px;
+}
+
+.foto-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşe Başvuru</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/job.css' %}">
+</head>
+<body>
+    <h1>İş İlanları</h1>
+    <!-- Filtreleme Formu -->
+    <form method="GET" action="{% url 'job_application' %}" class="filter-form">
+        <input type="text" name="sector" value="{{ sector_filter }}" placeholder="Sektör">
+        <input type="text" name="location" value="{{ location_filter }}" placeholder="Konum">
+        <input type="text" name="position" value="{{ position_filter }}" placeholder="Pozisyon">
+        <input type="text" name="company_name" value="{{ company_name_filter }}" placeholder="Şirket Adı">
+        <button type="submit">Filtrele</button>
+    </form>
+    
+    <!-- İlanlar Tablosu -->
+    <div class="table-container">
+        <table class="job-table">
+            <thead>
+                <tr>
+                    <th>Ilan ID</th>
+                    <th>Şirket Adı</th>
+                    <th>Sektör</th>
+                    <th>Konum</th>
+                    <th>Pozisyon</th>
+                    <th>Deneyim</th>
+                    <th>Eğitim</th>
+                    <th>Çalışma Şekli</th>
+                    <th>İncele</th>  <!-- İncele butonu için yeni başlık -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in page_obj %}
+                <tr>
+                    <td>{{ row.0 }}</td>
+                    <td>{{ row.1 }}</td>
+                    <td>{{ row.2 }}</td>
+                    <td>{{ row.3 }}</td>
+                    <td>{{ row.5 }}</td>
+                    <td>{{ row.6 }}</td>
+                    <td>{{ row.7 }}</td>
+                    <td>{{ row.8 }}</td>
+                    <td>
+                        <form method="get" action="{% url 'job_detail' row.0 %}">
+                            <button type="submit">İncele</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Sayfalama -->
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1&sector={{ sector_filter }}&location={{ location_filter }}&position={{ position_filter }}&company_name={{ company_name_filter }}">İlk Sayfa</a>
+                <a href="?page={{ page_obj.previous_page_number }}&sector={{ sector_filter }}&location={{ location_filter }}&position={{ position_filter }}&company_name={{ company_name_filter }}">Önceki</a>
+            {% endif %}
+    
+            <span class="current">
+                Sayfa {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&sector={{ sector_filter }}&location={{ location_filter }}&position={{ position_filter }}&company_name={{ company_name_filter }}">Sonraki</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}&sector={{ sector_filter }}&location={{ location_filter }}&position={{ position_filter }}&company_name={{ company_name_filter }}">Son Sayfa</a>
+            {% endif %}
+        </span>
+    </div>
+
+
+    <h2 >Önerilen İş İlanları</h2>
+    <div class="table-container">
+        <table class="recommended-jobs-table">
+            <thead>
+                <tr>
+                    <th>İlan ID</th>
+                    <th>Şirket Adı</th>
+                    <th>Konum</th>
+                    <th>Pozisyon</th>
+                    <th>Deneyim</th>
+                    <th>Eğitim</th>
+                    <th>Çalışma Şekli</th>
+                    <th>Skor</th>
+                    <th>İncele</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in recommended_jobs %}
+                <tr>          
+                    <td>{{ job.ilan_id }}</td>
+                    <td>{{ job.SirketAdi }}</td>
+                    <td>{{ job.Konum }}</td>  
+                    <td>{{ job.Pozisyon }}</td>  
+                    <td>{{ job.Deneyim }}</td>
+                    <td>{{ job.Egitim }}</td>
+                    <td>{{ job.CalismaSekli }}</td>
+                    <td>{{ job.Benzerlik_Skoru }}</td>
+                    <td>
+                        <form method="get" action="{% url 'job_detail' job.ilan_id %}">
+                            <button type="submit">İncele</button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">Önerilen iş ilanı bulunamadı.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+</html>

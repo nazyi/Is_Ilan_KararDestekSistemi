@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Düzenle</title>
+</head>
+<body>
+    <h1>{{ company_name }} - İlanı Düzenle</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="sektor">Sektör:</label>
+        <input type="text" id="sektor" name="sektor" value="{{ job.sektor }}" required><br><br>
+
+        <label for="konum">Konum:</label>
+        <input type="text" id="konum" name="konum" value="{{ job.konum }}" required><br><br>
+
+        <label for="pozisyon">Pozisyon:</label>
+        <input type="text" id="pozisyon" name="pozisyon" value="{{ job.pozisyon }}" required><br><br>
+
+        <label for="deneyim">Deneyim:</label>
+        <input type="text" id="deneyim" name="deneyim" value="{{ job.deneyim }}" required><br><br>
+
+        <label for="egitim">Eğitim:</label>
+        <input type="text" id="egitim" name="egitim" value="{{ job.egitim }}" required><br><br>
+
+        <label for="calisma_sekli">Çalışma Şekli:</label>
+        <input type="text" id="calisma_sekli" name="calisma_sekli" value="{{ job.calisma_sekli }}" required><br><br>
+
+        <label for="aciklama">Açıklama:</label><br>
+        <textarea name="aciklama" id="aciklama" rows="4" cols="50" required>{{ job.aciklama }}</textarea><br><br>
+
+        <button type="submit">Kaydet</button>
+    </form>
+</body>
+</html>
