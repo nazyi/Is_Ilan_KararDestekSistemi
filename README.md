@@ -1,9 +1,11 @@
 <div align="center">
-# 💼 İş İlanı Karar Destek Sistemi
+ 
+# İş İlanı Karar Destek Sistemi
  
 **CV'leri iş ilanlarıyla anlamsal olarak eşleştiren, AHP tabanlı ağırlıklandırma ile uyumluluk skoru üreten NLP destekli karar destek sistemi**
 
 </div>
+
 ---
 
 ## Proje Hakkında
